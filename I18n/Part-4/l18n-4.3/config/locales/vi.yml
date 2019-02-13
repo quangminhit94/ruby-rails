@@ -1,0 +1,8 @@
+
+vi:
+  hello_world: "Chào mừng đến với blog"
+  message: "Đây là tính năng đổi ngôn ngữ"
+  time:
+    formats:
+      default: "bây giờ là %Hh %M' %Ss"
+      short: "bây giờ là %Hh %M' %Ss"

@@ -1,0 +1,27 @@
+<h1>4.4 Using Safe HTML Translations</h1>
+<div><%= t('welcome') %></div>
+<div><%= raw t('welcome') %></div>
+<div>hello html: <%= t('hello_html') %></div>
+<div>title html: <%= t('title.html') %></div>
+
+<%# This is safe, it is going to be escaped if needed. %>
+<%
+=begin%>
+ <%= t('welcome_html', username: @current_user.username) %> 
+<%
+=end%>
+<%= t('welcome_html', username: 'Minh') %>
+
+<h1>4.5 Translations for Active Record Models</h1>
+<p>
+  <%= User.model_name.human %>
+</p>
+<p>
+  <%= User.model_name.human(count: 2) %>
+</p>
+<p>
+<%= User.human_attribute_name("login") %>
+</p>
+<p>
+  <%= User.human_attribute_name("gender.female") %>
+</p>

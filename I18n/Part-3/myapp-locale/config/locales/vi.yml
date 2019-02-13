@@ -1,0 +1,10 @@
+
+vi:
+  hello_world: "Chào mừng đến với blog"
+  message: "Đây là tính năng đổi ngôn ngữ"
+  true: "ahihi"
+  currency: 'VND'
+  product_price: "%{price} VND"
+  time:
+    formats:
+      short: "bây giờ là %Hh %M' %Ss"

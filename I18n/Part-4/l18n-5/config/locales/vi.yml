@@ -1,0 +1,13 @@
+
+vi:
+  hello_world: "Chào mừng đến với blog"
+  message: "Đây là tính năng đổi ngôn ngữ"
+  time:
+    formats:
+      default: "bây giờ là %Hh %M' %Ss"
+      short: "bây giờ là %Hh %M' %Ss"
+  title:
+    html: <b>tiêu đề nè!</b>
+  welcome_html: "<b>Chào bạn %{username}!</b>"
+  hello_html: "<h3>Hi mọi người</h3>"
+  welcome: "<b>Thẻ welcome</b>"

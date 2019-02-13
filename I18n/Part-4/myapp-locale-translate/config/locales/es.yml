@@ -1,0 +1,5 @@
+es:
+  hello_world: "es lang"
+  message: "mgs"
+  currency: "€"
+  product_price: "%{price} €"

@@ -1,0 +1,8 @@
+es:
+  hello_world: "es lang"
+  message: "mgs"
+  foo: 'foo of es'
+  time:
+    formats:
+      default: "timo iso %Hh %M' %Ss"
+      short: "bây giờ là %Hh %M' %Ss"

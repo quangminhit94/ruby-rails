@@ -1,0 +1,7 @@
+<h1>5 How to Store your Custom Translations</h1>
+<h1>pt: <%= I18n.t ('foo.bar') %></h1>
+
+<p><%= I18n.t 'date.formats.short' %></p>
+<p><%= I18n.t 'formats.short', scope: :date %></p>
+<p><%= I18n.t :short, scope: 'date.formats' %></p>
+<p><%= I18n.t :short, scope: [:date, :formats] %></p>

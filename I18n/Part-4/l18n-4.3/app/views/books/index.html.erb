@@ -1,0 +1,60 @@
+<h1>4.2 Pluralization</h1>
+
+<p><%= I18n.backend.store_translations :es, inbox: {
+  zero1: 'no messages', # optional
+  one1: 'one message',
+  other1: '%{count} messages'
+} %></p>
+<p><%= I18n.backend.store_translations :vi, inbox: {
+  zero: 'không có tin nhắn nào', # optional
+  one: 'một tin nhắn',
+  other: '%{count} tin nhắn'
+} %></p>
+<p><%= I18n.translate :inbox, count: 2 %></p>
+<p><%= I18n.translate :inbox, count: 1 %></p>
+<p><%= I18n.translate :inbox, count: 0 %></p>
+
+
+<%
+=begin%>
+ 
+<p><%= lookup_key = :zero if count == 0 && entry.has_key?(:zero)
+lookup_key ||= count == 1 ? :one : :other
+entry[lookup_key] %></p> 
+<%
+=end%>
+
+<h1>4.2.1 Locale-specific rules</h1>
+<p>
+<%= I18n::Backend::Simple.include(I18n::Backend::Pluralization)
+I18n.backend.store_translations :en, i18n: { plural: { rule: lambda { |n| [0, 1].include?(n) ? :one : :other } } }
+I18n.backend.store_translations :en, apples: { one: 'one or none', other: 'more than one' } %>
+</p>
+<p>
+<%= I18n::Backend::Simple.include(I18n::Backend::Pluralization)
+I18n.backend.store_translations :vi, i18n: { plural: { rule: lambda { |n| [0, 1].include?(n) ? :one : :other } } }
+I18n.backend.store_translations :vi, apples: { one: 'một hoặc rỗng', other: 'nhiều hơn 1' } %>
+</p>
+<p><%= I18n.t :apples, count: 1, locale: :en %></p>
+<p><%= I18n.t :apples, count: 2, locale: :en %></p>
+<p><%= I18n.t :apples, count: 1, locale: :vi %></p>
+<p><%= I18n.t :apples, count: 2, locale: :vi %></p>
+
+<h1>4.3 Setting and Passing a Locale</h1>
+<p><%= I18n.locale = :vi %></p>
+<p><%= I18n.t :message %></p>
+<p><%= I18n.l Time.now %></p>
+
+<p><%= I18n.locale = :en %></p>
+<p><%= I18n.t :message %></p>
+<p><%= I18n.l Time.now %></p>
+
+<p><%= I18n.locale = :es %></p>
+<p><%= I18n.t :message, locale: :es %></p>
+<p><%= I18n.l Time.now, locale: :es %></p>
+
+<p><%= I18n.t 'test', locale: :vi %></p>
+<p><%= I18n.t 'abc', locale: :vi %></p>
+
+
+

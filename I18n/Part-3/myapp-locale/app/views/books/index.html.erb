@@ -1,0 +1,49 @@
+<h1>Show dictionary (Bien co gia tri)</h1>
+<p><%= t :hello_world %></p>
+<p><%= t :message %></p>
+<h1>Show error</h1>
+<p>Bien co gia tri: <%= flash[:notice] %></p>
+<p>
+  Bien khong gia tri khong nem ra loi: 
+  <span style='color: red'><%= t :msg %></span>
+</p>
+<p>
+  Bien khong gia tri co nem ra loi: 
+  <span style='color: red'><%= I18n.t :msg %></span>
+</p>
+<p>
+  Bien khong gia tri co nem ra loi: 
+  <span style='color: red'><%= flash[:msg] %></span>
+</p>
+
+<h1>Escape special character</h1>
+<p style='color: green'>success object has escape</p>
+<ul>
+  <li><%= I18n.t 'success.true' %></li>
+  <li><%= I18n.t 'success.false' %></li>
+  <li><%= I18n.t 'success.on' %></li>
+  <li><%= I18n.t 'success.off' %></li>
+</ul>
+<p style='color: red'>failure object has no escape</p>
+<ul>
+  
+  <li><%= I18n.t 'failure.on' %></li>
+  <li><%= I18n.t 'failure.off' %></li>
+  <li><%= I18n.t 'failure.true' %></li>
+  <li><%= I18n.t 'failure.false' %></li>
+</ul>
+<h1>Currency</h1>
+<p><%= "#{t('currency')} 10" %></p>
+<p><%= t('product_price', price: 10) %></p>
+
+<h1>Date time</h1>
+<p><%= l Time.now, format: :short %></p>
+<p><%= t 'test.hi' %></p>
+
+<h1>Link</h1>
+<%= link_to 'text', "http://127.0.0.1:3000/" %>
+<%
+=begin%>
+ <%= link_to 'import link', books_import_path %> 
+<%
+=end%>
