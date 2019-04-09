@@ -1,0 +1,9 @@
+%strong='This is a haml file'
+%strong{class: 'code', id: 'message'} This is a haml file
+%strong.code#test This is a haml file
+
+-# %div#sliderbar Filter by Tag: #{tag_links(Tag.all)}
+
+%ul#user
+  - @user.each do |user|
+    %li= user.pass

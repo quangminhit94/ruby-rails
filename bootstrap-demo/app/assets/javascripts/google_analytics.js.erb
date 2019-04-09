@@ -1,0 +1,16 @@
+<% if Rails.env == 'production' %>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXXXX-XX']);
+  _gaq.push(['_trackPageview']);
+  ga_src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  $.externalScript(ga_src).done(function(script, textStatus) {
+    console.log('Script loading: ' + textStatus );
+    if (typeof _gat != 'undefined') {
+      console.log('Okay. GA file loaded.');
+    }
+    else
+    {
+      console.log('Problem. GA file not loaded.');
+    }
+  });
+<% end %>

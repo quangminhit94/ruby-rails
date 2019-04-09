@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body style='font-size: 14px, font-family: Arial, Helvetica, sans-serif'>
+    <h1 style='color: red'>Welcome to example.com, <%= @user.name %></h1>
+    <%= link_to 'welcome', root_url %>
+    <%# this link will go to %>
+    <%= link_to 'my site url', url_for(host: 'example.com',
+                controller: 'welcome',
+                action: 'index') %>
+    <%# this link will go to http://example.com/users/75 %>
+    <%= user_url(@user, host: 'example.com') %>
+    <%# this displays image %>
+    <%= image_tag 'galang1.jpg' %>
+    <%= image_tag attachments['image.jpg'].url, alt: 'My Photo', class: 'photos' %>
+    <p>
+      You have successfully signed up to example.com,ma
+      your username is: <%= @user.login %>.<br>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

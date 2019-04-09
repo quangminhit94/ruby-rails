@@ -1,0 +1,15 @@
+/ app/views/shared/_navigation.html.erb
+%nav.navbar.navbar-default{:role => "navigation"}
+  .container
+    .navbar-header
+      %a.navbar-brand{:href => "/"} Tealeaf Todo
+    %ul.nav.navbar-nav.navbar-right
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          Menu
+          %span.caret
+        %ul.dropdown-menu{:role => "menu"}
+          %li
+            %a{:href => "#"} Login
+          %li.divider
+          %li= link_to 'Create a todo', new_todo_path
